@@ -4,27 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Homepage</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Font Awesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header>
         <div id="head">
-
             <div id="name">
                 <p id="nameText">Generator</p>
             </div>
 
-            <div id="nav">
-                <p id="template">Templates</p>
-                <p id="module">Modules</p>
-                <p id="feature">Features</p>
-                <button id="theme">Get Theme</button>
+            <!-- Menu icon (mobile only) -->
+            <div id="menu-icon">
+                <i class="fa-solid fa-bars"></i>
             </div>
 
+            <nav id="nav">
+                <p id="template" class="navItem">Templates</p>
+                <p id="module" class="navItem">Modules</p>
+                <p id="feature" class="navItem">Features</p>
+                <button id="theme">Get Theme</button>
+            </nav>
+
+            <!-- Overlay -->
+            <div id="overlay"></div>
         </div>
     </header>
 
@@ -49,7 +59,7 @@
                     <span class="time" id="days">00</span>
                     <span class="label">Days</span>
                 </div>
-                
+
                 <div class="timer">
                     <span class="time" id="hours">00</span>
                     <span class="label">Hours</span>
@@ -86,7 +96,7 @@
                     <span class="time" id="days2">00</span>
                     <span class="label">Days</span>
                 </div>
-                
+
                 <div class="timer">
                     <span class="time" id="hours2">00</span>
                     <span class="label">Hours</span>
@@ -103,7 +113,7 @@
                 </div>
 
             </div>
-            
+
         </div>
 
         <div id="mainBottom">
