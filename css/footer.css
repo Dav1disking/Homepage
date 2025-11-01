@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    min-height: 100vh;
+}
+
+#footerDiv {
+    margin-top: 125px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: transparent;
+    color: black;
+
+    gap: 20px;
+}
+
+.nameHeading {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    gap: 20px;
+
+    width: 300px;
+}
+
+#nameLongText {
+    width: 500px;
+}
+
+#End {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
