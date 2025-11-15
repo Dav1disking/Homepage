@@ -1,56 +1,156 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Poppins, sans-serif;
-    min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  min-height: 100vh;
 }
 
+/* Header Base */
 #head {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 50px;
-
-    gap: 20px;
-
-    color: black;
-    background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 80px;
+  background-color: white;
+  color: black;
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 #name {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+}
 
-    font-weight: 600;
-    font-size: 20px;
+/* Desktop Nav */
+
+.navItem {
+  font-size: 16px;
+  cursor: pointer;
 }
 
 #nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    gap: 20px;
-    
-    font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 #theme {
-    width: 100px;
-    height: 25px;
+  width: 110px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
-    background-color: black;
-    color: rgb(214, 214, 214);
-    
-    border-color: none;
-    border-style: solid;
-    border-radius: 20px;
+/* Menu Icon */
+#menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
 
-    font-size: 9px;
+#menu-icon:hover {
+  transform: scale(1.1);
+}
 
-    cursor: pointer;
+/* Overlay */
+#overlay {
+  display: none;
+}
+
+/* ---------- MOBILE STYLES ---------- */
+@media (max-width: 768px) {
+  .navItem {
+    font-size: 14px;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  #nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s ease;
+    z-index: 15;
+  }
+
+  /* Active state — slide in */
+  #nav.active {
+    right: 0;
+  }
+
+  /* Overlay visible */
+  #overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* Hide nav links until mobile opens */
+  #nav p,
+  #nav button {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.3s ease;
+  }
+
+  /* Animate them in sequence */
+  #nav.active p:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  #nav.active p:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  #nav.active p:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  #nav.active button {
+    transition-delay: 0.4s;
+  }
+
+  #nav.active p,
+  #nav.active button {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
