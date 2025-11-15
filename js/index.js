@@ -1,3 +1,28 @@
+// Mobile Nav
+const menuIcon = document.getElementById('menu-icon');
+const nav = document.getElementById('nav');
+const overlay = document.getElementById('overlay');
+const icon = menuIcon.querySelector('i');
+
+const toggleMenu = () => {
+  const isActive = nav.classList.toggle('active');
+  overlay.classList.toggle('active', isActive);
+  icon.classList.replace(isActive ? 'fa-bars' : 'fa-xmark', isActive ? 'fa-xmark' : 'fa-bars');
+};
+
+// Toggle when icon clicked
+menuIcon.addEventListener('click', toggleMenu);
+
+// Close when overlay clicked
+overlay.addEventListener('click', () => {
+  nav.classList.remove('active');
+  overlay.classList.remove('active');
+  icon.classList.replace('fa-xmark', 'fa-bars');
+});
+
+// Mobile Nav
+
+
 const days = document.getElementById('days')
 const hours = document.getElementById('hours')
 const mins = document.getElementById('mins')
