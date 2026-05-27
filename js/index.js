@@ -77,8 +77,8 @@ const countDown2 = (targetDate2) => {
     setInterval(() => updateCountDown2(targetDate2), 1);
 }
 
-const targetDate = new Date("November 23 2025 18:00");
+const targetDate = new Date("November 23 2026 18:00");
 countDown(targetDate)
 
-const targetDate2 = new Date("November 31 2025 18:00");
+const targetDate2 = new Date("November 31 2026 18:00");
 countDown2(targetDate2)
